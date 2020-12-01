@@ -1,0 +1,57 @@
+.img{
+	background-image: url(this.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	/*opacity: 0.6 white;*/
+
+}
+
+#diff{
+	border: 1px solid rgba(201, 219, 0, 1);
+	border-radius: 20px;
+	background-color: chartreuse;
+	color: black;
+
+}
+.top{
+	color:black;
+	background-color:lightblue;
+	opacity: 0.8;
+}
+
+.diff{
+	font-size: 1.5em;
+	background-color: chartreuse;
+}
+.head1{
+	border-top:2px solid black; 
+}
+#mar{
+	margin: 20px;
+}
+#btn{
+	background-color: chartreuse;
+		color: black;
+		border: 1px solid rgba(201, 219, 0, 1);
+		border-radius: 8px;
+}
+#book{
+	background-color: chartreuse;
+	color: black;
+	border: 1px solid rgba(201, 219, 0, 1);
+	border-radius: 8px;
+}
+.web{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+i{
+	font-size: 40px;
+	padding: 10px;
+}
+#colh{
+	color:chartreuse;
+}
+.custom-select{
+	background: white;
+}

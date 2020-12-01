@@ -1,0 +1,29 @@
+body{
+	background-image:url("login.jpg");
+	background-repeat:no-repeat;
+	background-size: 100% 100% ;
+}
+#signup-form{
+	margin-top: 100px;
+	font-size: 1.5em;
+	background-color: white;
+	width: 400px;
+	border-radius: 30px;
+	padding: 10px;
+}
+label{
+	color:black;
+}
+input{
+	border-radius: 20px;
+	height: 30px;
+}
+#sign{
+	background-color: rgba(13, 138, 206, 0.5);
+	font-weight: bold;
+	width: 200px;
+}
+#log{
+	text-decoration: none;
+	color:red;
+}
