@@ -1,6 +1,6 @@
 <?php
 require_once('class.php');
-require_once('sqlconfig.php');
+// require_once('sqlconfig.php');
 
 ?>
 <!DOCTYPE html>
@@ -35,10 +35,7 @@ require_once('sqlconfig.php');
           <div class="collapse navbar-collapse" id="navbar_menu">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a href="#" class="nav-link">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">Contact Us</a>
+                <a href="signup.php" class="nav-link">Sign Up</a>
               </li>
               <li class="nav-item">
                 <a href="login.php" class="nav-link">Login</a>
@@ -123,7 +120,7 @@ require_once('sqlconfig.php');
       </div>
 
       <footer class="m-5">
-         <div class="mt-5">
+         <div class="mt-5" id="Z">
          <div class="row">
             <div class="col-sm-4 text-center">
                <p>

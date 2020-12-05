@@ -6,21 +6,27 @@ function cab(){
 	var cab = $("#cabtype").val();
 	if(cab =='CedMicro'){
 		$('#luggage').attr("disabled",true);
-		alert("luggage facility is not available for micro");
+		$("#luggage").val("Luggage facility is not available for CedMicro");
+		
 	}
 	else{
 		$('#luggage').attr("disabled",false);
+		$('#luggage').val("");
 	}
 }
 function disable() {
-	
+	$('#btn').show();
     var x = $(".pickup").val();
     var y=$(".drop option[value='"+x+"']").val();
     $(".drop option[value='"+x+"']").attr("disabled", "disabled").siblings().removeAttr("disabled");
     $('.pickerror').hide();
+    $('#book').hide();
+
 
 }
 function dis() {
+	$('#btn').show();
+	$('#book').hide();
     var x = $(".drop").val();
     $(".pickup option[value='"+x+"']").attr("disabled", "disabled").siblings().removeAttr("disabled");
     $('.droperror').hide();
@@ -49,6 +55,8 @@ function calculate(){
 		$('.caberror').html('* Please select your cab');
 		return;
 	}
+
+	
 	if(weights==''){
 		alert('Your final baggage would be 0 Kgs');
 		$("#luggage").val(0);
@@ -78,6 +86,13 @@ function calculate(){
 			}
 		});
 }
+function alphaonly(button) { 
+	console.log(button.which);
+        var code = button.which;
+        if ((code > 64 && code < 91) || (code < 123 && code > 96)|| (code==08)) 
+            return true; 
+        return false; 
+    } 
 function onlynumber(button) { 
 	var code = button.which;
     if (code > 31 && (code < 48 || code > 57)) 

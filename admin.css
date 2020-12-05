@@ -4,12 +4,31 @@ table{
 	border-collapse: collapse;
 }
 td{
+	padding: 10px;
 	border:2px solid lightblue;
 	border-collapse: collapse;
 }
 th{
-border:2px solid lightblue;
+	background-color: lightblue;
+	border:2px solid white;
 	border-collapse: collapse;
+	padding: 10px;
+}
+
+#logo{
+	font-size: 1.5em;
+	margin:10px;
+}
+#ced{
+	color: white;
+	background-color: rgb(23, 19, 15);
+}
+#user{
+	    margin-left: 430px;
+}
+.diff{
+	font-size: 1.5em;
+	background-color: chartreuse;
 }
 .btn{
 	margin-top: 10px;
@@ -84,4 +103,15 @@ ul{
 }
 a{
 	text-decoration: none;
+}
+li:hover{
+	background-color: lightblue;
+}
+i{
+	font-size: 40px;
+	padding: 10px;
+}
+
+#colh{
+	color:chartreuse;
 }

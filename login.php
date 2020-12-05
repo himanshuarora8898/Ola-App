@@ -1,31 +1,64 @@
 <?php
-include('sqlconfig.php');
-include('class.php');
+include ('sqlconfig.php');
+include ('class.php');
 $obj = new DBCon();
-$obj2=new user();
+$obj2 = new user();
 if (isset($_POST['submit']))
-    {
-        $username = isset($_POST['username']) ? $_POST['username'] : '';
-        $password = isset($_POST['password']) ? $_POST['password'] : '';
-        $obj2->login($username ,$password ,$obj->conn);
+{
+    $username = isset($_POST['username']) ? $_POST['username'] : '';
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
+    $obj2->login($username, $password, $obj->conn);
 
 }
 ?>
 <html>
 <head>
+  <script >
+    function alphaonlyuser(button) { 
+  console.log(button.which);
+        var code = button.which;
+        if (code==32)
+            return false; 
+        return true; 
+    }   
+  </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <title>
         Login
     </title>
     <link rel="stylesheet" type="text/css" href="login.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
-<body>
+<body> 
+<header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a href="#" class="navbar-brand pl-5"><span class="bg-dark text-white diff">Ced</span><span class="text-white diff">Cab</span></a>
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar_menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar_menu">
+            <ul class="navbar-nav ml-auto">
+              
+              <li class="nav-item">
+                <a href="index.php" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="signup.php" class="nav-link">Sign up</a>
+              </li>
+            </ul>
+          </div>     
+        </nav>
+      </header> 
+    
     <center>
     <div id="wrapper">
         <div id="login-form">
             <h2>Login</h2>
             <form action="" method="POST">
                 <p>
-                    <label for="username">Username: <input type="text"
+                    <label for="username">Username: <input onkeypress="return alphaonlyuser(event)" type="text"
                      name="username" required></label>
                 </p>
                 <p>
@@ -36,10 +69,33 @@ if (isset($_POST['submit']))
                     <input id="login" type="submit" name="submit" value="Login">
                 </p>
             </form>
-            <h3>OR</h3>
-            <p><a href="signup.php" id="sign">Sign Up</a></p>
+            
         </div>
     </div>
     </center>
+    <footer>
+         <div>
+         <div class="row">
+            <div class="col-sm-4 text-center">
+               <p>
+                  <a href="#"><i class="fab fa-facebook text-secondary" ></i></a>
+                  <a href="#"><i class="fab fa-twitter text-secondary"></i></a>
+                  <a href="#"><i class="fab fa-instagram text-secondary"></i></a>
+               </p>
+            </div>
+            <div class="col-sm-4 text-center">
+                  <p id="lolo"><sub><i class="fas fa-heart" id="colh"></i></sub>crafted by <strong>page cloud</strong></p>
+            </div>
+            <div class="col-sm-4 mt-4 text-center">
+               <ol>
+                  <a href="#" class="ml-2 text-secondary">Features</a>
+                  <a href="#" class="ml-2 text-secondary">Reviews</a>
+                  <a href="#" class="ml-2 text-secondary">About Us</a>
+
+               </ol>
+            </div>
+         </div>
+         </div>      
+      </footer>
 </body>
 </html>

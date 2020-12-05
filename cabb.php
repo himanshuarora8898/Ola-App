@@ -40,11 +40,9 @@ if($_SESSION['userdata']['username']=='me_admin'){
           </button>
           <div class="collapse navbar-collapse" id="navbar_menu">
             <ul class="navbar-nav ml-auto">
+              
               <li class="nav-item">
-                <a href="#" class="nav-link">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">Contact Us</a>
+                <a href="user.php?id=7" class="nav-link">Dashboard</a>
               </li>
               <li class="nav-item">
                 <a href="cabb.php?id=1" class="nav-link">Sign out</a>
