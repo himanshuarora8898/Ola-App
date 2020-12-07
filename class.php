@@ -57,7 +57,7 @@ class user
                         'username' => $row['user_name'],
                         'user_id' => $row['user_id']
                     );
-                }
+                
 
                 if ($row['isadmin'] == '1')
                 {
@@ -75,6 +75,7 @@ class user
                     }
 
                 }
+            }
             }
             else
             {
@@ -385,22 +386,22 @@ class user
                 $abc = $row['user_id'];
             }
         }
-        if ($filter == 'mini')
+         if ($filter == 'minii')
         {
             if ($m == 3)
             {
-                $sql = "SELECT * FROM rides WHERE `customer_user_id`='" . $abc . "' AND `cab_type`='CedMini'
+                $sql = "SELECT * FROM rides WHERE `cab`='CedMini'
 ORDER BY total_fare DESC
 LIMIT 0, 7";
             }
             if ($m == 2)
             {
-                $sql = "SELECT * FROM rides WHERE `status`='2' AND `customer_user_id`='" . $abc . "' ORDER BY total_fare DESC
+                $sql = "SELECT * FROM rides WHERE `status`='2' AND `cab`='CedMini'ORDER BY total_fare DESC
 LIMIT 0, 7";
             }
             if ($m == 1)
             {
-                $sql = "SELECT * FROM rides WHERE `status`='1' AND `customer_user_id`='" . $abc . "' ORDER BY total_fare DESC
+                $sql = "SELECT * FROM rides WHERE `status`='1' AND `cab`='CedMini'ORDER BY total_fare DESC
 LIMIT 0, 7";
             }
 
@@ -416,7 +417,149 @@ LIMIT 0, 7";
                     $a .= '<td>' . $row['drop_location'] . '</td>';
                     $a .= '<td>' . $row['total_distance'] . '</td>';
                     $a .= '<td>' . $row['total_fare'] . '</td>';
-                    $a .= '<td>CedMini</td>';
+                    $a .= '<td>' . $row['luggage'] . '</td>';
+                    $a .= '<td>' . $row['cab'] . '</td></tr>';
+                }
+                $a .= '</table>';
+                echo $a;
+            }
+        }
+        if ($filter == 'microo')
+        {
+            if ($m == 3)
+            {
+                $sql = "SELECT * FROM rides WHERE `cab`='CedMicro' ORDER BY total_fare DESC
+LIMIT 0, 7";
+            }
+            if ($m == 2)
+            {
+                $sql = "SELECT * FROM rides WHERE `status`='2' AND `cab`='CedMicro' ORDER BY total_fare DESC LIMIT 0, 7";
+            }
+            if ($m == 1)
+            {
+                $sql = "SELECT * FROM rides WHERE `status`='1' AND `cab`='CedMicro' ORDER BY total_fare DESC LIMIT 0, 7";
+            }
+
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0)
+            {
+
+                while ($row = $result->fetch_assoc())
+                {
+                    $a .= '<td>' . $row['ride_id'] . '</td>';
+                    $a .= '<td>' . $row['ride_date'] . '</td>';
+                    $a .= '<td>' . $row['pick'] . '</td>';
+                    $a .= '<td>' . $row['drop_location'] . '</td>';
+                    $a .= '<td>' . $row['total_distance'] . '</td>';
+                    $a .= '<td>' . $row['total_fare'] . '</td>';
+                    $a .= '<td>' . $row['luggage'] . '</td>';
+                    $a .= '<td>' . $row['cab'] . '</td></tr>';
+                }
+                $a .= '</table>';
+                echo $a;
+            }
+        }
+
+        if ($filter == 'suvv')
+        {
+            if ($m == 3)
+            {
+                $sql = "SELECT * FROM rides WHERE `cab`='CedSuv' ORDER BY total_fare DESC LIMIT 0, 7";
+            }
+            if ($m == 2)
+            {
+                $sql = "SELECT * FROM rides WHERE `status`='2' AND `cab`='CedSuv' ORDER BY total_fare DESC LIMIT 0, 7";
+            }
+            if ($m == 1)
+            {
+                $sql = "SELECT * FROM rides WHERE `status`='1' AND `cab`='CedSuv' ORDER BY total_fare DESC LIMIT 0, 7";
+            }
+
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0)
+            {
+
+                while ($row = $result->fetch_assoc())
+                {
+                    $a .= '<td>' . $row['ride_id'] . '</td>';
+                    $a .= '<td>' . $row['ride_date'] . '</td>';
+                    $a .= '<td>' . $row['pick'] . '</td>';
+                    $a .= '<td>' . $row['drop_location'] . '</td>';
+                    $a .= '<td>' . $row['total_distance'] . '</td>';
+                    $a .= '<td>' . $row['total_fare'] . '</td>';
+                   $a .= '<td>' . $row['luggage'] . '</td>';
+                    $a .= '<td>' . $row['cab'] . '</td></tr>';
+                }
+                $a .= '</table>';
+                echo $a;
+            }
+        }
+        if ($filter == 'royall')
+        {
+            if ($m == 3)
+            {
+                $sql = "SELECT * FROM rides WHERE `cab`='CedRoyal' ORDER BY total_fare DESC LIMIT 0, 7";
+            }
+            if ($m == 2)
+            {
+                $sql = "SELECT * FROM rides WHERE `status`='2' AND `cab`='CedRoyal' ORDER BY total_fare DESC LIMIT 0, 7";
+            }
+            if ($m == 1)
+            {
+                $sql = "SELECT * FROM rides WHERE `status`='1' AND `cab`='CedRoyal' ORDER BY total_fare DESC LIMIT 0, 7";
+            }
+
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0)
+            {
+
+                while ($row = $result->fetch_assoc())
+                {
+                    $a .= '<td>' . $row['ride_id'] . '</td>';
+                    $a .= '<td>' . $row['ride_date'] . '</td>';
+                    $a .= '<td>' . $row['pick'] . '</td>';
+                    $a .= '<td>' . $row['drop_location'] . '</td>';
+                    $a .= '<td>' . $row['total_distance'] . '</td>';
+                    $a .= '<td>' . $row['total_fare'] . '</td>';
+                    $a .= '<td>' . $row['luggage'] . '</td>';
+                    $a .= '<td>' . $row['cab'] . '</td></tr>';
+                }
+                $a .= '</table>';
+                echo $a;
+            }
+        }
+        if ($filter == 'mini')
+        {
+            if ($m == 3)
+            {
+                $sql = "SELECT * FROM rides WHERE `customer_user_id`='" . $abc . "' AND `cab`='CedMini'
+ORDER BY total_fare DESC
+LIMIT 0, 7";
+            }
+            if ($m == 2)
+            {
+                $sql = "SELECT * FROM rides WHERE `status`='2' AND `customer_user_id`='" . $abc . "' AND `cab`='CedMini'ORDER BY total_fare DESC
+LIMIT 0, 7";
+            }
+            if ($m == 1)
+            {
+                $sql = "SELECT * FROM rides WHERE `status`='1' AND `customer_user_id`='" . $abc . "' AND `cab`='CedMini'ORDER BY total_fare DESC
+LIMIT 0, 7";
+            }
+
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0)
+            {
+
+                while ($row = $result->fetch_assoc())
+                {
+                    $a .= '<td>' . $row['ride_id'] . '</td>';
+                    $a .= '<td>' . $row['ride_date'] . '</td>';
+                    $a .= '<td>' . $row['pick'] . '</td>';
+                    $a .= '<td>' . $row['drop_location'] . '</td>';
+                    $a .= '<td>' . $row['total_distance'] . '</td>';
+                    $a .= '<td>' . $row['total_fare'] . '</td>';
+                    $a .= '<td>' . $row['cab'] . '</td>';
                     $a .= '<td>' . $row['luggage'] . '</td></tr>';
                 }
                 $a .= '</table>';
@@ -427,21 +570,17 @@ LIMIT 0, 7";
         {
             if ($m == 3)
             {
-                $sql = "SELECT * FROM rides WHERE `customer_user_id`='" . $abc . "'
+                $sql = "SELECT * FROM rides WHERE `customer_user_id`='" . $abc . "' AND `cab`='CedMicro'
 ORDER BY total_fare DESC
 LIMIT 0, 7";
             }
             if ($m == 2)
             {
-                $sql = "SELECT * FROM rides WHERE `status`='2' AND `customer_user_id`='" . $abc . "' 
-ORDER BY total_fare DESC
-LIMIT 0, 7";
+                $sql = "SELECT * FROM rides WHERE `status`='2' AND `customer_user_id`='" . $abc . "' AND `cab`='CedMicro' ORDER BY total_fare DESC LIMIT 0, 7";
             }
             if ($m == 1)
             {
-                $sql = "SELECT * FROM rides WHERE `status`='1' AND `customer_user_id`='" . $abc . "' 
-ORDER BY total_fare DESC
-LIMIT 0, 7";
+                $sql = "SELECT * FROM rides WHERE `status`='1' AND `customer_user_id`='" . $abc . "' AND `cab`='CedMicro' ORDER BY total_fare DESC LIMIT 0, 7";
             }
 
             $result = $conn->query($sql);
@@ -456,7 +595,7 @@ LIMIT 0, 7";
                     $a .= '<td>' . $row['drop_location'] . '</td>';
                     $a .= '<td>' . $row['total_distance'] . '</td>';
                     $a .= '<td>' . $row['total_fare'] . '</td>';
-                    $a .= '<td>CedMicro</td>';
+                    $a .= '<td>' . $row['cab'] . '</td>';
                     $a .= '<td>' . $row['luggage'] . '</td></tr>';
                 }
                 $a .= '</table>';
@@ -469,20 +608,17 @@ LIMIT 0, 7";
             if ($m == 3)
             {
                 $sql = "SELECT * FROM ride WHERE `customer_user_id`='" . $abc . "' 
-ORDER BY total_fare DESC
-LIMIT 0, 7";
+                AND `cab`='CedSuv' ORDER BY total_fare DESC LIMIT 0, 7";
             }
             if ($m == 2)
             {
                 $sql = "SELECT * FROM rides WHERE `status`='2' AND `customer_user_id`='" . $abc . "'
-ORDER BY total_fare DESC
-LIMIT 0, 7";
+                AND `cab`='CedSuv' ORDER BY total_fare DESC LIMIT 0, 7";
             }
             if ($m == 1)
             {
                 $sql = "SELECT * FROM rides WHERE `status`='1' AND `customer_user_id`='" . $abc . "' 
-ORDER BY total_fare DESC
-LIMIT 0, 7";
+                AND `cab`='CedSuv' ORDER BY total_fare DESC LIMIT 0, 7";
             }
 
             $result = $conn->query($sql);
@@ -497,7 +633,7 @@ LIMIT 0, 7";
                     $a .= '<td>' . $row['drop_location'] . '</td>';
                     $a .= '<td>' . $row['total_distance'] . '</td>';
                     $a .= '<td>' . $row['total_fare'] . '</td>';
-                    $a .= '<td>CedSuv</td>';
+                   $a .= '<td>' . $row['cab'] . '</td>';
                     $a .= '<td>' . $row['luggage'] . '</td></tr>';
                 }
                 $a .= '</table>';
@@ -509,20 +645,17 @@ LIMIT 0, 7";
             if ($m == 3)
             {
                 $sql = "SELECT * FROM rides WHERE `customer_user_id`='" . $abc . "' 
-ORDER BY total_fare DESC
-LIMIT 0, 7";
+                AND `cab`='CedRoyal' ORDER BY total_fare DESC LIMIT 0, 7";
             }
             if ($m == 2)
             {
                 $sql = "SELECT * FROM rides WHERE `status`='2' AND `customer_user_id`='" . $abc . "' 
-ORDER BY total_fare DESC
-LIMIT 0, 7";
+                AND `cab`='CedRoyal' ORDER BY total_fare DESC LIMIT 0, 7";
             }
             if ($m == 1)
             {
                 $sql = "SELECT * FROM rides WHERE `status`='1' AND `customer_user_id`='" . $abc . "'
-ORDER BY total_fare DESC
-LIMIT 0, 7";
+                AND `cab`='CedRoyal' ORDER BY total_fare DESC LIMIT 0, 7";
             }
 
             $result = $conn->query($sql);
@@ -537,7 +670,7 @@ LIMIT 0, 7";
                     $a .= '<td>' . $row['drop_location'] . '</td>';
                     $a .= '<td>' . $row['total_distance'] . '</td>';
                     $a .= '<td>' . $row['total_fare'] . '</td>';
-                    $a .= '<td>CedRoyal</td>';
+                    $a .= '<td>' . $row['cab'] . '</td>';
                     $a .= '<td>' . $row['luggage'] . '</td></tr>';
                 }
                 $a .= '</table>';
@@ -577,7 +710,9 @@ LIMIT 0, 7";
                     $a .= '<td>' . $row['drop_location'] . '</td>';
                     $a .= '<td>' . $row['total_distance'] . '</td>';
                     $a .= '<td>' . $row['total_fare'] . '</td>';
+                    $a .= '<td>' . $row['cab'] . '</td>';
                     $a .= '<td>' . $row['luggage'] . '</td></tr>';
+
                 }
                 $a .= '</table>';
                 echo $a;
@@ -616,6 +751,7 @@ LIMIT 0, 30";
                     $a .= '<td>' . $row['drop_location'] . '</td>';
                     $a .= '<td>' . $row['total_distance'] . '</td>';
                     $a .= '<td>' . $row['total_fare'] . '</td>';
+                    $a .= '<td>' . $row['cab'] . '</td>';
                     $a .= '<td>' . $row['luggage'] . '</td></tr>';
                 }
                 $a .= '</table>';
@@ -653,6 +789,7 @@ ORDER BY total_fare ASC ";
                     $a .= '<td>' . $row['drop_location'] . '</td>';
                     $a .= '<td>' . $row['total_distance'] . '</td>';
                     $a .= '<td>' . $row['total_fare'] . '</td>';
+                    $a .= '<td>' . $row['cab'] . '</td>';
                     $a .= '<td>' . $row['luggage'] . '</td></tr>';
                 }
                 $a .= '</table>';
@@ -734,7 +871,8 @@ ORDER BY total_distance ASC ";
                     $a .= '<td>' . $row['drop_location'] . '</td>';
                     $a .= '<td>' . $row['total_distance'] . '</td>';
                     $a .= '<td>' . $row['total_fare'] . '</td>';
-                    $a .= '<td>' . $row['luggage'] . '</td></tr>';
+                    $a .= '<td>' . $row['luggage'] . '</td>';
+                    $a .= '<td>' . $row['cab'] . '</td></tr>';
                 }
                 $a .= '</table>';
                 echo $a;
@@ -743,7 +881,7 @@ ORDER BY total_distance ASC ";
         }
         if ($filter == 'distance')
         {
-            if ($m == 4)
+            if ($m == 3)
             {
                 $sql = "SELECT * FROM rides
 ORDER BY total_distance ASC ";
@@ -772,7 +910,8 @@ ORDER BY total_distance ASC ";
                     $a .= '<td>' . $row['drop_location'] . '</td>';
                     $a .= '<td>' . $row['total_distance'] . '</td>';
                     $a .= '<td>' . $row['total_fare'] . '</td>';
-                    $a .= '<td>' . $row['luggage'] . '</td></tr>';
+                    $a .= '<td>' . $row['luggage'] . '</td>';
+                    $a .= '<td>' . $row['cab'] . '</td></tr>';
                 }
                 $a .= '</table>';
                 echo $a;
@@ -814,7 +953,8 @@ ORDER BY total_fare ASC ";
                     $a .= '<td>' . $row['drop_location'] . '</td>';
                     $a .= '<td>' . $row['total_distance'] . '</td>';
                     $a .= '<td>' . $row['total_fare'] . '</td>';
-                    $a .= '<td>' . $row['luggage'] . '</td></tr>';
+                    $a .= '<td>' . $row['luggage'] . '</td>';
+                    $a .= '<td>' . $row['cab'] . '</td></tr>';
                 }
                 $a .= '</table>';
                 echo $a;
@@ -856,7 +996,8 @@ ORDER BY total_fare DESC ";
                     $a .= '<td>' . $row['drop_location'] . '</td>';
                     $a .= '<td>' . $row['total_distance'] . '</td>';
                     $a .= '<td>' . $row['total_fare'] . '</td>';
-                    $a .= '<td>' . $row['luggage'] . '</td></tr>';
+                    $a .= '<td>' . $row['luggage'] . '</td>';
+                    $a .= '<td>' . $row['cab'] . '</td></tr>';
                 }
                 $a .= '</table>';
                 echo $a;
@@ -897,7 +1038,7 @@ ORDER BY total_fare DESC ";
             VALUES ( current_timestamp(),'" . $_SESSION['ride']['from'] . "', '" . $_SESSION['ride']['to'] . "', '" . $_SESSION['ride']['travel'] . "', '" . $_SESSION['ride']['baggage'] . "','" . $_SESSION['ride']['fare'] . "', 1, '" . $ids . "')";
             if ($sess->query($sql2) === true)
             {
-                // echo "New record created successfully";
+                // header("Location:thanks.php");
                 
             }
             else
@@ -1272,7 +1413,7 @@ class admin
                     $a .= '<td>' . $row['mobile'] . '</td>';
                     $a .= '<td>' . $row['isblock'] . '</td>';
 
-                    $a .= '<td><a href="loginapprove.php?id=' . $row['user_id'] . '">Toggle</a></td></tr>';
+                    $a .= '<td><a style="color:green;" href="loginapprove.php?id=' . $row['user_id'] . '">Unblock</a></td></tr>';
 
                 }
                 $a .= '</table>';
@@ -1296,7 +1437,7 @@ class admin
                     $a .= '<td>' . $row['mobile'] . '</td>';
                     $a .= '<td>' . $row['isblock'] . '</td>';
 
-                    $a .= '<td><a href="loginapprove.php?id=' . $row['user_id'] . '">Toggle</a></td></tr>';
+                    $a .= '<td><a style="color:red;" href="loginapprove.php?id=' . $row['user_id'] . '">Block</a></td></tr>';
 
                 }
                 $a .= '</table>';

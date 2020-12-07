@@ -1,4 +1,6 @@
 function cab(){
+	$('#btn').show();
+	$('#book').hide();
 	$('.caberror').hide();
 	console.log('yayyyyy');
 	var pick = $("#pickup").val();
@@ -32,6 +34,8 @@ function dis() {
     $('.droperror').hide();
    
 }
+
+	
 
 $('.pickerror').hide();
 $('.droperror').hide();
@@ -93,14 +97,23 @@ function alphaonly(button) {
             return true; 
         return false; 
     } 
-function onlynumber(button) { 
+function onlynumber(button) {
+    $('#btn').show();
+	$('#book').hide(); 
 	var code = button.which;
     if (code > 31 && (code < 48 || code > 57)) 
         return false; 
     return true; 
 } 
 
+$("input[name=mobile]").on("blur", function(e){
+var myval = $(this).val();
+
+if(myval.length < 10) {
+alert("Mobile should be 10 digits.");
+$(this).unfocus();
+}
+});
 
 
-
-
+    

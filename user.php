@@ -101,7 +101,7 @@ if ($_SESSION['userdata']['username'] == 'me_admin')
 
 <div id="main">
 
-<div class="w3-lime">
+<div class="userhead">
   <button id="openNav" class="w3-button w3-white w3-xlarge" onclick="w3_open()">&#9776;</button>
   <center>
   <div class="w3-container">
@@ -123,11 +123,11 @@ if (isset($_GET['id']))
    <option value="Select Value">Select Value</option>
    <option value="7">Rides in 7 days</option>
    <option value="30">Rides in 30 days</option>
-   <option value="distance">Sorting by Distance </option>
-   <option value="1">Sorting by Fare</option></center>
+   <option value="distance">Sort by Distance </option>
+   <option value="1">Sort by Fare</option></center>
  
 </select>
-<input type="submit" value="Sorting" name="submit" class="submitt">
+<input type="submit" value="Sort" name="submit" class="submitt">
 <br>
 
 
@@ -281,8 +281,8 @@ function w3_close() {
   document.getElementById("openNav").style.display = "inline-block";
 }
 </script>
-<footer class="m-5">
-         <div class="mt-5">
+<footer >
+         <div class="bg-light ">
          <div class="row">
             <div class="col-sm-4 text-center">
                <p>

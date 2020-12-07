@@ -102,7 +102,7 @@ require_once('class.php');
                   <p class="caberror text-left text-danger"></p>
                   <div class="input-group mb-2">
                      <span class="input-group-text text_size" id="basic-addon1">Luggage</span>
-                     <input type="text" class="form-control" onkeypress="return onlynumber(event)" id="luggage" placeholder="Enter Weight In KG" aria-label="Username" aria-describedby="basic-addon1">
+                     <input type="text"  class="form-control luggage" onkeypress="return onlynumber(event)" id="luggage" placeholder="Enter Weight In KG" aria-label="Username" aria-describedby="basic-addon1">
                   </div>
                   <div class="input-group mb-2">
                      <div class="input-group-prepend"></div>
@@ -119,8 +119,8 @@ require_once('class.php');
          </div>
       </div>
 
-      <footer class="m-5">
-         <div class="mt-5" id="Z">
+      <footer >
+         <div class="bg-light" id="Z">
          <div class="row">
             <div class="col-sm-4 text-center">
                <p>
@@ -143,5 +143,10 @@ require_once('class.php');
          </div>
          </div>      
       </footer>
+    <script type="text/javascript">
+      $('.luggage').on("cut copy paste drag drop",function(e) {
+        e.preventDefault();
+      });
+    </script>
    </body>
 </html>

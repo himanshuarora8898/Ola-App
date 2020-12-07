@@ -127,11 +127,11 @@ if (isset($_GET['id']))
     $m = $_GET['id'];
     if ($m == 1 || $m == 2 || $m == 3 || $m == 4 || $m == 5 || $m == 6 || $m == 7)
     {
-        if ($m == 1 || $m == 2 || $m == 3)
+        if ($m == 5 || $m == 6 || $m == 7)
         {
             $abc = '<div class="select">
 <form action="" method="POST">
-<center>Your Choice Our Sorting :-<select name="filter" id="filter">
+<center>Sort By :-<select name="filter" id="filter">
 <option value="Select Value">Select Value</option>
 <option value="name">Filter by Name</option>
 
@@ -153,7 +153,7 @@ if (isset($_GET['id']))
 <option value="dist">Sort by Distance</option>
 
 </select>
-<input type="submit" value="submit" name="submit" class="submitt">
+<input type="submit" value="Sort" name="submit" class="submitt">
 </center>
 <center>Filter By:-<select name="filter2" id="filter2">
 <option value="Select Value">Select Value</option>
@@ -163,7 +163,7 @@ if (isset($_GET['id']))
 <option value="suvv">Filter By Cedsuv</option>
 
 </select>
-<input type="submit" value="Sorting" name="submitt" class="submitt">
+<input type="submit" value="Filter" name="submitt" class="submitt">
 </center>
 </form>';
         }
@@ -182,14 +182,13 @@ if (isset($_POST['submit']))
     $filter = isset($_POST['filter']) ? $_POST['filter'] : '';
     if ($filter == 1 || $filter == 'fare' || $filter == 'date' || $filter == 'dist' || $filter == 'microo' || $filter == 'minii' || $filter == 'suvv' || $filter == 'royall')
     {
-        $a = "<table><tr><th>Ride_id</th><th>Ride_date</th><th>Pickup</th><th>Drop</th><th>Distance</th><th>Fare</th><th>Laugage</th><th>Cab-type</th></tr><tr>";
+        $a = "<table><tr><th>Ride_id</th><th>Ride_date</th><th>Pickup</th><th>Drop</th><th>Distance</th><th>Fare</th><th>Luggage</th><th>Cab-type</th></tr><tr>";
         $ab->filterrr($a, $m, $filter, $obj3->conn);
-        echo $filter;
+      
     }
     else
     {
-        echo $filter;
-
+        
         $a = '<table><tr><th>User_id</th><th>Name</th><th>Contact</th><th>Date </th><th>username</th></tr><tr>';
         $ab->filterrr($a, $m, $filter, $obj3->conn);
     }
@@ -203,13 +202,13 @@ if (isset($_POST['submitt']))
     $filter = isset($_POST['filter2']) ? $_POST['filter2'] : '';
     if ($filter == 1 || $filter == 'fare' || $filter == 'date' || $filter == 'dist' || $filter == 'microo' || $filter == 'minii' || $filter == 'suvv' || $filter == 'royall')
     {
-        $a = "<table><tr><th>Ride_id</th><th>Ride_date</th><th>Pickup</th><th>Drop</th><th>Distance</th><th>Fare</th><th>Laugage</th><th>Cab-type</th></tr><tr>";
+        $a = "<table><tr><th>Ride_id</th><th>Ride_date</th><th>Pickup</th><th>Drop</th><th>Distance</th><th>Fare</th><th>Luggage</th><th>Cab-type</th></tr><tr>";
         $ab->filterrr($a, $m, $filter, $obj3->conn);
-        echo $filter;
+        
     }
     else
     {
-        echo $filter;
+        
 
         $a = '<table><tr><th>User_id</th><th>Name</th><th>Contact</th><th>Date </th><th>username</th></tr><tr>';
         $ab->filterrr($a, $m, $filter, $obj3->conn);
@@ -393,8 +392,8 @@ function w3_close() {
   document.getElementById("openNav").style.display = "inline-block";
 }
 </script>
-<footer class="m-5">
-         <div class="mt-5">
+<footer >
+         <div class="bg-light">
          <div class="row">
             <div class="col-sm-4 text-center">
                <p>

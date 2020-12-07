@@ -55,15 +55,15 @@ if (isset($_POST['submit']))
     <center>
     <div id="wrapper">
         <div id="login-form">
-            <h2>Login</h2>
+            <h2 id="log">Login</h2>
             <form action="" method="POST">
                 <p>
                     <label for="username">Username: <input onkeypress="return alphaonlyuser(event)" type="text"
-                     name="username" required></label>
+                     name="username" class="log" required></label>
                 </p>
                 <p>
                     <label for="password">Password: <input type="password"
-                     name="password" required></label>
+                     name="password" class="log" required></label>
                 </p>
                 <p>
                     <input id="login" type="submit" name="submit" value="Login">
@@ -74,7 +74,7 @@ if (isset($_POST['submit']))
     </div>
     </center>
     <footer>
-         <div>
+         <div class="bg-light">
          <div class="row">
             <div class="col-sm-4 text-center">
                <p>
@@ -97,5 +97,10 @@ if (isset($_POST['submit']))
          </div>
          </div>      
       </footer>
+      <script >
+        $('.log').on("cut copy paste drag drop",function(e) {
+        e.preventDefault();
+        });
+      </script>
 </body>
 </html>

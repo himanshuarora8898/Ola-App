@@ -110,9 +110,5 @@ if($_POST['cab']=="Cedsuv"){
 	echo($fare);
 	}
 	$_SESSION['ride']['fare']=$fare;
-	require_once('sqlconfig.php');
-	require_once('class.php');
-	$obj= new DBCon();
-	$obj2=new user();
-	$obj2->ride_detail($obj->conn);
+	
 ?>

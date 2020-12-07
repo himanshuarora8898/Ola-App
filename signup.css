@@ -9,10 +9,11 @@
 #signup-form{
 	padding-top: 20px;
 	font-size: 1.5em;
-	background-color: white;
+	background-color: black;
 	width: 400px;
 	border-radius: 30px;
 	padding: 10px;
+	opacity: 0.8;
 }
 #logo{
 	font-size: 1.5em;
@@ -30,7 +31,10 @@
 	background-color: chartreuse;
 }
 label{
-	color:black;
+	color:honeydew;
+}
+#reg{
+	color:honeydew;
 }
 input{
 	border-radius: 20px;
@@ -39,6 +43,7 @@ input{
 }
 #sign{
 	background-color: rgba(13, 138, 206, 0.5);
+	color:honeydew;
 	font-weight: bold;
 	width: 200px;
 	height: 40px;
@@ -57,7 +62,5 @@ i{
 #colh{
 	color:chartreuse;
 }
-footer{
-	background-color: lightblue;
-}
+
 

@@ -86,7 +86,15 @@ if($_SESSION['userdata']['username']=='me_admin'){
                   <div class="input-group mb-2">
                      <label class="input-group-text text_size" for="inputGroupSelect01">PICKUP</label>
                      <select class="custom-select pickup" id="pickup" onchange="disable()" required>
-                        <option selected>Current-location</option>
+                        <option selected><?php 
+                        if(isset($_SESSION['ride'])){
+                          echo $_SESSION['ride']['from'];
+                        } 
+                        else{
+                          echo 'Choose your current location';
+                        }
+
+                        ?></option>
                         <?php 
                           $obj = new DBCon();
                           $obj5 = new user();
@@ -99,8 +107,16 @@ if($_SESSION['userdata']['username']=='me_admin'){
                   <div class="input-group mb-2">
                      <label class="input-group-text text_size" for="inputGroupSelect01">DROP</label>
                      <select class="custom-select drop" id="drop" onchange="dis()" required>
-                        <option selected>Enter Drop for ride estimate</option>
-                       <option selected>Current-location</option>
+                       
+                       <option selected><?php 
+                        if(isset($_SESSION['ride'])){
+                          echo $_SESSION['ride']['to'];
+                        } 
+                        else{
+                          echo 'Choose your drop location';
+                        }
+
+                        ?></option>
                        <?php 
                           $obj = new DBCon();
                           $obj5 = new user();
@@ -113,7 +129,15 @@ if($_SESSION['userdata']['username']=='me_admin'){
                   <div class="input-group mb-2">
                      <label class="input-group-text text_size" for="inputGroupSelect01">CAB TYPE</label>
                      <select class="custom-select pick" id="cabtype" required onchange="cab()">
-                        <option selected value="Select-Cab-Type">Select-Cab-Type</option>
+                        <option selected value="Select-Cab-Type"><?php 
+                        if(isset($_SESSION['ride'])){
+                          echo $_SESSION['ride']['cab'];
+                        } 
+                        else{
+                          echo 'Select cab';
+                        }
+
+                        ?></option>
                         <option value="CedMicro">CedMicro</option>
                         <option value="CedMini">CedMini</option>
                         <option value="Cedsuv">CedSuv</option>
@@ -123,7 +147,15 @@ if($_SESSION['userdata']['username']=='me_admin'){
                   <p class="caberror text-left text-danger"></p>
                   <div class="input-group mb-2">
                      <span class="input-group-text text_size" id="basic-addon1">Luggage</span>
-                     <input type="text" class="form-control" onkeypress="return onlynumber(event)" id="luggage" placeholder="Enter Weight In KG" aria-label="Username" aria-describedby="basic-addon1">
+                     <input type="text" class="form-control" onkeypress="return onlynumber(event)" id="luggage"  placeholder="Enter Weight In KG" aria-label="Username" aria-describedby="basic-addon1" value=<?php 
+                        if(isset($_SESSION['ride'])){
+                          echo $_SESSION['ride']['baggage'];
+                        } 
+                        else{
+                          echo 'Enter weight in KG';
+                        }
+
+                        ?>>
                   </div>
                   <div class="input-group mb-2">
                      <div class="input-group-prepend"></div>
@@ -140,8 +172,8 @@ if($_SESSION['userdata']['username']=='me_admin'){
          </div>
       </div>
 
-      <footer class="m-5">
-         <div class="mt-5">
+      <footer >
+         <div class="bg-light">
          <div class="row">
             <div class="col-sm-4 text-center">
                <p>
